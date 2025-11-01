@@ -2,14 +2,14 @@ document.querySelector('.button').addEventListener('click', function () {
     const link = document.querySelector('.input').value.trim();
     let video_id = "";
 
-    // Extract Video ID
+    
     if (link.includes("watch?v=")) {
         video_id = link.split("v=")[1].substring(0, 11);
     } else if (link.includes("youtu.be/")) {
         video_id = link.split("be/")[1].substring(0, 11);
     }
 
-    // Remove previous result if exists
+    
     const oldContainer = document.querySelector('.image-container');
     if (oldContainer) oldContainer.remove();
 
@@ -60,7 +60,7 @@ document.querySelector('.button').addEventListener('click', function () {
                     <button class="btn btn-success mt-3 download-btn" data-src="${src}" data-name="${item}">Download ${item}</button>
                 `;
 
-                // Attach click event to download button
+               
                 document.querySelector('.download-btn').addEventListener('click', function () {
                     const url = this.getAttribute('data-src');
                     const name = this.getAttribute('data-name');
